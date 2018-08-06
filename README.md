@@ -2,6 +2,38 @@
 
 ## Introduction
 TSTest-Template Pattern(Test Service-Test-Template Pattern) is a test framework based on template. It’s like the java “Template method” design pattern, if most cases share the same test logic like “send request,wait for complation,verify”, this framework can be used. The common logic is defined in a template class like BaseCase,and supply the common implementation，any cases can extend it and overwrite the common implementation if need
+
+A example case like below,
+```
+  class BaseCase {
+      templateTest() {
+          sendRequest();
+          wait4Completed();
+          verify()
+      }
+      
+      sendRequest() {
+        .....
+      }
+      
+      wait4Completed() {
+        .....
+      }
+      
+      verify() {
+        .....
+      }
+  }
+  
+  class CaseA extends BaseCase {
+      @Override
+      verify() {
+        //customized verify logic
+      }
+  }
+
+```
+
 ## Author
 Jun Qin
 ## Bug and issues
