@@ -7,16 +7,16 @@ A example case like below,
 ```
   class BaseCase {
       templateTest() {
-          sendRequest();
-          wait4Completed();
+          send();
+          wait();
           verify()
       }
       
-      sendRequest() {
+      send() {
         .....
       }
       
-      wait4Completed() {
+      wait() {
         .....
       }
       
@@ -26,6 +26,8 @@ A example case like below,
   }
   
   class CaseA extends BaseCase {
+      //use base send and wait
+      
       @Override
       verify() {
         //customized verify logic
