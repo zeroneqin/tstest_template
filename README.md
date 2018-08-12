@@ -26,11 +26,12 @@ A example case like below,
   }
   
   class CaseA extends BaseCase {
-      //use base send and wait
+  
+      //not overrided send and wait, use base send and wait logic
       
       @Override
       verify() {
-        //customized verify logic
+        //customized verify logic by override
       }
   }
 
